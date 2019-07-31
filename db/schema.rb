@@ -26,8 +26,10 @@ ActiveRecord::Schema.define(version: 2019_07_17_154746) do
     t.string "email"
     t.string "name"
     t.string "address"
+    t.integer "books_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["books_id"], name: "index_users_on_books_id"
   end
 
   add_foreign_key "books", "users"
